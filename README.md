@@ -10,12 +10,28 @@
 
 ## Team members
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/adf2b5d0-bb73-4cb8-8a1d-684fb89e8408" alt="Imagen 1" width="500">
+</p>
 
+## Members from left to right:
 
+---
 
+## Cheng Tsun To:
+### Age: 15
 
+He is passionate in robotics. His main role in the team is to design and provide ideas in terms of the chassis and model of the robot. He also gives idea in the use of components such as the microcomputer and the motor, as well as programming. 
 
+## Mak Ching Long:
+### Age: 16
 
+He is the main programmer of the team. He's good at programming, especially in python. He's also good at communicating with others so he can explain the program to the team and teamates can work together more easily. His role in the team is the programming of the robot, as well as documenting the whole process of the robot.
+
+## Hui Chit Ming:
+### Age: 15
+
+He is optimistic and often cheers up the team. He brings the team together and allow us to overcome challenges. His role in the team is to do some of the python programming and mainly documenting the repository of the robot.
 
 <br>
  <br>
@@ -38,6 +54,8 @@
 | [WP 1625 brushed electronic speed controller x1](https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53) |[RC380 high speed carbon brushed DC motor x1](https://www.aliexpress.com/i/1005003661229027.html)|[e6001 servo motor](https://www.amazon.com/-/zh_TW/dp/B06XF7MFPJ) |
 | <img src="https://github.com/user-attachments/assets/bb4f38f3-5291-4a82-b1b4-f688ee4dfd86" width="200"/> |<img src="https://github.com/user-attachments/assets/c0dde0e4-c927-452a-8d0b-1cc9c07cd210" alt="Alt 1" width="200"/> |<img src="https://github.com/user-attachments/assets/0e900534-9620-4852-a608-f126c70fc098" width="200"/> |
 |[Realsense D435i camera x1](https://www.intelrealsense.com/depth-camera-d435i/)|[8.4V 18650 battery ×4](https://www.steameshop.com/product/18650/?srsltid=AfmBOoq64uuFMYHSZRhLKaVYFERjOLc22R510Y9Ci-HTcJxwL2meLc1y6ps)|[Single key button x1](https://www.amazon.co.uk/Programmable-User-Defined-Button-Customized-Combination/dp/B08SQGWZN4?th=1) |
+| <img src="https://github.com/user-attachments/assets/585c5ace-ae6b-40d9-ba9d-0225de282e81" width="200"/> 
+| [Wireless-AC8265 chip x1](https://www.waveshare.com/wireless-ac8265.htm) |
 
 ## Introduction
 
