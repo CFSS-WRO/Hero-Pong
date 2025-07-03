@@ -203,7 +203,12 @@ points_right = [point_right, point_right_left, point_right_right, point_right_le
 The above code is a list of points for visualization with corresponding colors. 
 We had set several dots on the camera to sense the image colour depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. We added data and information to the monitor connected to the car for better vision and for easier understanding of what the program is at so that it is easy to know where did the car error occurred during our process of coding. We came up with the idea of adding more dots on the screen for better and more accurate determination of the distance of the nearest wall from the car. At last, we added 5 dots for each left, centre and right sector of the camera. Our program calculates the average black colour depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving in the wrong direction or to an unfavourable direction. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls.
 
-### 
+## References
+- https://www.intelrealsense.com/depth-camera-d435i/
+- https://spectrum.ieee.org/lidar-on-achip#:~:text=Most%20groups%20developing%20autonomous%20vehicles%20see%20lidar%20as,more%20fidelity%20than%20can%20be%20done%20with%20cameras
+- https://developer.nvidia.com/embedded/jetson-nano
+- https://developer.download.nvidia.com/assets/embedded/secure/jetson/Nano/docs/NV_Jetson_Nano_Developer_Kit_User_Guide.pdf?__token__=exp=1751552084~hmac=e63bf29d233df0d843b6c97e4486a0eed943069fe968967cf5e0ea8cd218808c&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9
+- https://youtu.be/F3G0sUz3_Jw?si=XnzUtsvSodAnV4Uu
 
 
 
