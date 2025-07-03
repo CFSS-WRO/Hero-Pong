@@ -176,8 +176,8 @@ if x >0-y*90:           #too right turing left
         else:                  
             car.steering = 0*steering_value         
 ```       
-This initializes the servo and ensure that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered as positive and counterclockwise means negative to the left direction.
-| Variable  | Function/description |
+This initializes the servo and ensures that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered positive and counterclockwise means negative to the left direction.
+| Variables  | Function/description |
 | -------------- | -------------- |
 | speed  | The speed of the car |
 | front_dist  | The range of dangerous distance|
@@ -186,18 +186,24 @@ This initializes the servo and ensure that the specific angles for left, right t
 | mixed loop  | The same as “loop”, it stands for which "if statement" it is, but only for identifying the red blocks and green blocks  |
 | flag_block | When it is True, it means that a block was captured by the camera |
 | flag_block_based_on  | To check which "if statement" has run the code and made the value of flag_block change, for easier debugging| red_logic  | When it is True, it will run the part for the red block obstacle avoidance | green_logic  |   When it is True, it will run the part for the green block obstacle avoidance | got_direction  | To check is the car know the direction of car travel, when got direction is True, it will detecting line ( orange and blue) if it is False, it will stop decting line
-  | right_direction  | It stands for the direction of the car travel, True stands for right, False stands for left
-  | passed_all_block_check  | When it is True, it mean there are 2 block with different color in front of the camera
-  |blue_lower = np.array([90,80,50]) blue_upper = np.array([110,180,140]) orange_lower = np.array([0,87,108]) orange_upper = np.array([11,187,208]) red_lower1 = np.array([169,205,76]) red_upper1 = np.array([179,255,176]) green_lower = np.array([36,99,50]) green_upper = np.array([56,199,144])|In order to make the camera note that which RGB valuen it stand for different color, we assigned different kinds of list for the upper limit and lower limit of the color| 
+  | right_direction  | It stands for the direction of the car's travel. True stands for right, False stands for left
+  | passed_all_block_check  | When it is True, it means there are 2 blocks with different colours in front of the camera
+  |blue_lower = np.array([90,80,50]) blue_upper = np.array([110,180,140]) orange_lower = np.array([0,87,108]) orange_upper = np.array([11,187,208]) red_lower1 = np.array([169,205,76]) red_upper1 = np.array([179,255,176]) green_lower = np.array([36,99,50]) green_upper = np.array([56,199,144])|In order to make the camera note that which RGB valuen it stand for different colour, we assigned different kinds of list for the upper limit and lower limit of the colour| 
 last_left = None / last_right = None  last_mid = None / last_block = None| Since our depth camera sometimes cannot obtain the distance successfully, we will store the last value it got successfully and use that value if the distance cannot be obtained | dist_red, dist_green |  Distance of the red block and green block
- | checked_is_behind_line checked_is_behind_line2  | If these value are True, that mean the block is behind the line, we can ignore it until the car pass through the blue or orange line|  
+ | checked_is_behind_line checked_is_behind_line2  | If these values are True, that means the block is behind the line, we can ignore it until the car pass through the blue or orange line|  
 
 
 
-### Camera and sensors’ object detection and wall determination:
-We had set several dots on the camera to sense the image color depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls. We added 5 dots for each left, centre and the right sector of the camera. Our program calculates the average black color depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving at the wrong direction or to an unfavourable direction. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	
-### Monitoring of sensors: 
-We added data and information to the monitor connected to the car for better vision and for easier understanding of what the program is at so that it is easy to know where did the car error during our process of coding. We came up an idea of adding more dots on the screen for better and more accurate determination of the distance of the nearest wall from the car.  
+### Camera and sensors’ object detection and obstacle determination:
+```ino
+points_mid = [point_mid, point_mid_left, point_mid_right, point_mid_left1, point_mid_right1]
+points_left = [point_left, point_left_left, point_left_right, point_left_left1, point_left_right1]
+points_right = [point_right, point_right_left, point_right_right, point_right_left1, point_right_right1]
+```
+The above code is a list of points for visualization with corresponding colors. 
+We had set several dots on the camera to sense the image colour depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. We added data and information to the monitor connected to the car for better vision and for easier understanding of what the program is at so that it is easy to know where did the car error occurred during our process of coding. We came up with the idea of adding more dots on the screen for better and more accurate determination of the distance of the nearest wall from the car. At last, we added 5 dots for each left, centre and right sector of the camera. Our program calculates the average black colour depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving in the wrong direction or to an unfavourable direction. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls.
+
+### 
 
 
 
