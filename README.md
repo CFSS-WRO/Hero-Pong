@@ -150,7 +150,7 @@ The invalid depth band (blind spot) is very small
   <img src="https://github.com/user-attachments/assets/e23e0a92-adfc-4575-8f2b-2450a388ddff" alt="Imagen 1" width="400">
 </p>
 
-## Code and programming
+# Code and programming
 ## Assignment
 ### Python Library: 
 ```ino
@@ -180,6 +180,7 @@ from realsense_depth_Copy1copy import DepthCamera
   |blue_lower = np.array([90,80,50]) blue_upper = np.array([110,180,140]) orange_lower = np.array([0,87,108]) orange_upper = np.array([11,187,208]) red_lower1 = np.array([169,205,76]) red_upper1 = np.array([179,255,176]) green_lower = np.array([36,99,50]) green_upper = np.array([56,199,144])|In order to make the camera note that which RGB valuen it stand for different colour, we assigned different kinds of list for the upper limit and lower limit of the colour| 
 last_left = None / last_right = None  last_mid = None / last_block = None| Since our depth camera sometimes cannot obtain the distance successfully, we will store the last value it got successfully and use that value if the distance cannot be obtained | dist_red, dist_green |  Distance of the red block and green block
  | checked_is_behind_line checked_is_behind_line2  | If these values are True, that means the block is behind the line, we can ignore it until the car pass through the blue or orange line|  
+## Strategy for open challenge
 
 ### Servo configuration:
 
@@ -202,7 +203,10 @@ points_left = [point_left, point_left_left, point_left_right, point_left_left1, 
 points_right = [point_right, point_right_left, point_right_right, point_right_left1, point_right_right1]
 ```
 The above code is a list of points for visualization with corresponding colors. 
-We had set several dots on the camera to sense the image colour depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. We added data and information to the monitor connected to the car for better vision and for easier understanding of what the program is at so that it is easy to know where did the car error occurred during our process of coding. We came up with the idea of adding more dots on the screen for better and more accurate determination of the distance of the nearest wall from the car. At last, we added 5 dots for each left, centre and right sector of the camera. Our program calculates the average black colour depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving in the wrong direction or to an unfavourable direction. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls.
+We had set several dots on the camera to sense the image colour depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. We added data and information to the monitor connected to the car for better vision and for easier understanding of what the program is at so that it is easy to know where did the car error occurred during our process of coding. We came up with the idea of adding more dots on the screen for better and more accurate determination of the distance of the nearest wall from the car. At last, we added 5 dots for each left, centre and right sector of the camera. Our program calculates the average black colour depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving in the wrong direction or to an unfavourable direction. The average depth values at these points help assess distances to lane boundaries and obstacles. If the car is too close to an obstacle ahead (avg_mid < 550 mm) or side walls (avg_left or avg_right < 700 mm), it steers sharply away (car.steering = -1 to 1). Otherwise, it uses proportional steering based on how close it is to the left or right boundary to stay centered. If it is too close to the left boundary, steer right proportionally. If it is too close to the right boundary, steer left proportionally.
+The steering values will smoothly vary between -1 and 1 in accordance to distance deviations. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. Middle points centered at around x = 320,	Left points at around x = 100 and right points at around x = 560. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls.
+
+
 
 ## References
 - https://www.intelrealsense.com/depth-camera-d435i/
@@ -211,7 +215,7 @@ We had set several dots on the camera to sense the image colour depth (black) so
 - https://developer.download.nvidia.com/assets/embedded/secure/jetson/Nano/docs/NV_Jetson_Nano_Developer_Kit_User_Guide.pdf?__token__=exp=1751552084~hmac=e63bf29d233df0d843b6c97e4486a0eed943069fe968967cf5e0ea8cd218808c&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9
 - https://youtu.be/F3G0sUz3_Jw?si=XnzUtsvSodAnV4Uu
 - https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf
-- 
+
 
 
 
