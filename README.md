@@ -42,7 +42,7 @@ This circuit diagram represents the connections of the robotic system powered by
 
 
  > [!NOTE]
->For more details go to the schemes README by clicking [here](bruh)
+>For more details go to the schemes README by clicking [here](https://github.com/CFSS-WRO/WRO2425/blob/main/schemes/README.md)
 
 
 <br>
