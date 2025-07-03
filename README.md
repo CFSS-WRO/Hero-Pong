@@ -176,7 +176,20 @@ if x >0-y*90:           #too right turing left
         else:                  
             car.steering = 0*steering_value         
 ```       
-This initializes the servo and ensure that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered as positive and counterclockwise means negative to the left derection.
+This initializes the servo and ensure that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered as positive and counterclockwise means negative to the left direction.
+| Variable  | Function/description |
+| ------------- | ------------- |
+| speed  | The speed of the car |
+| front_dist  | The range of dangerous distance|
+| steering_value  | Due to the reason that we have 2 different kinds of model of servo. For model a, the right direction of the steering value is –1 while for model b, the right direction value is 1.  In order to make this code can change different model easier, we add this varible, by change the value in this valrible be 1 or –1, the steering direction can be corrected easily |
+| loop  | It stands for whether if statement the car are currecting working on, so that we can fix the bug more easily  |
+| Content Cell  | Content Cell  |
+| First Header  | Second Header |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+
+
 
 ### Camera and sensors’ object detection and wall determination:
 We had set several dots on the camera to sense the image color depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls. We added 5 dots for each left, centre and the right sector of the camera. Our program calculates the average black color depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving at the wrong direction or to an unfavourable direction. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	
