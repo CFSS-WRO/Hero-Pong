@@ -23,17 +23,17 @@ This is the official repository of the Hero Pong Team for the 2025 WRO Future En
 ## Cheng Tsun To:
 ### Age: 15
 
-He is passionate in robotics. His main role in the team is to design and provide ideas in terms of the chassis and model of the robot. He also gives idea in the use of components such as the microcomputer and the motor, as well as programming. 
+He is passionate about robotics. His main role in the team is to design and come up with ideas in terms of the chassis and model of the robot. He also gives ideas on the use of components such as the microcomputer and the motor, as well as programming. 
 
 ## Mak Ching Long:
 ### Age: 16
 
-He is the main programmer of the team. He's good at programming, especially in python. He's also good at communicating with others so he can explain the program to the team and teammates can work together more easily. His role in the team is the programming of the robot, as well as documenting the whole process of the robot.
+He is the main programmer of the team. He's good at programming, especially in Python. He's also good at communicating with others so he can explain the program to the team and teammates can work together more easily. His role in the team is the programming of the robot, as well as documenting the whole process of the robot.
 
 ## Hui Chit Ming:
 ### Age: 15
 
-He is optimistic and often cheers up the team. He brings the team together and allows us to overcome challenges. His role in the team is to do some of the python programming and mainly document the repository of the robot.
+He is optimistic and often cheers up the team. He brings the team together and allows us to overcome challenges. His role in the team is to do some of the Python programming and mainly document the repository of the robot.
 
 <br>
  <br>
@@ -163,8 +163,8 @@ from realsense_depth_Copy1copy import DepthCamera
 ```
  
 1.	Pyrealsense: Used to send data and information of the objects sensed by the camera to the Jetson Nano
-2.	cv2: Allows the image captured by the camera to be transferred to data in the python code.
-3.	NvidiaRacecar from realsense_depth_Copy1copy: It gives information, data and a determining standard for the realsense D435i camera to give essential information for the direction determination of the servo and the movement of the motor.
+2.	cv2: Allows the image captured by the camera to be transferred to data in the Python code.
+4.	NvidiaRacecar from realsense_depth_Copy1copy: It gives information, data and a determining standard for the realsense D435i camera to give essential information for the direction determination of the servo and the movement of the motor.
 ### Servo configuration:
 
 
@@ -178,7 +178,7 @@ if x >0-y*90:           #too right turing left
 ```       
 This initializes the servo and ensure that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered as positive and counterclockwise means negative to the left direction.
 | Variable  | Function/description |
-| ------------- | ------------- |
+| -------------- | -------------- |
 | speed  | The speed of the car |
 | front_dist  | The range of dangerous distance|
 | steering_value  | Due to the reason that we have 2 different kinds of models of servo. For model A, the right direction of the steering value is –1, while for model B, the right direction value is 1.  In order to make this code change to different models more easily, we add this variable. By changing the value in this variable be 1 or –1, the steering direction can be corrected easily |
@@ -187,9 +187,11 @@ This initializes the servo and ensure that the specific angles for left, right t
 | flag_block | When it is True, it means that a block was captured by the camera |
 | flag_block_based_on  | To check which "if statement" has run the code and made the value of flag_block change, for easier debugging| red_logic  | When it is True, it will run the part for the red block obstacle avoidance | green_logic  |   When it is True, it will run the part for the green block obstacle avoidance | got_direction  | To check is the car know the direction of car travel, when got direction is True, it will detecting line ( orange and blue) if it is False, it will stop decting line
   | right_direction  | It stands for the direction of the car travel, True stands for right, False stands for left
-  | Content Cell  | Content Cell  |
+  | passed_all_block_check  | When it is True, it mean there are 2 block with different color in front of the camera
+  |blue_lower = np.array([90,80,50]) blue_upper = np.array([110,180,140]) orange_lower = np.array([0,87,108]) orange_upper = np.array([11,187,208]) red_lower1 = np.array([169,205,76]) red_upper1 = np.array([179,255,176]) green_lower = np.array([36,99,50]) green_upper = np.array([56,199,144])|In order to make the camera note that which RGB valuen it stand for different color, we assigned different kinds of list for the upper limit and lower limit of the color| 
+last_left = None / last_right = None  last_mid = None / last_block = None| Since our depth camera sometimes cannot obtain the distance successfully, we will store the last value it got successfully and use that value if the distance cannot be obtained | dist_red, dist_green |  Distance of the red block and green block
+ | checked_is_behind_line checked_is_behind_line2  | If these value are True, that mean the block is behind the line, we can ignore it until the car pass through the blue or orange line|  
 
-The same as “loop”, it stands for which "if statement" it is, but only for identifying the red blocks and green blocks
 
 
 ### Camera and sensors’ object detection and wall determination:
