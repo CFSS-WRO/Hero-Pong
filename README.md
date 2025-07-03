@@ -217,6 +217,12 @@ Our strategy for this task is to modify the sensor and the camera. We thought of
 
 ## Challenges we overcame
 
+When encountering the obstacle challenge, one main issue we faced was that the RGB value of the red blocks is similar to that of the orange line on the mat. This causes the servo motor to react even if there is only the orange line but no red blocks in front of the robot. This often causes the car to turn to the right too early and hit the wall or obstacles. Therefore, we tried to tune the RGB value sensor of the camera. However, it didn't work at first. We then took a pixel from each of the lines and the red block, respectively, which is easier for the camera to sense and determine its color differences. We thought of an idea of auto-tuning the upper and lower limits of the RGB color range of the sensor in addition to the light source in the surrounding environment every time the vehicle is put in a different environment. The reduction or extension of the range of the RGB color reduces human error in tuning the RGB color difference between the red blocks and the orange line.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bc53b1ef-59fa-441a-9386-165052b83103" alt="Imagen 1" width="300">
+</p>
+
 
 
 
