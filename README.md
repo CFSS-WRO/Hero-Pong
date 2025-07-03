@@ -86,15 +86,14 @@ This circuit diagram represents the connections of the robotic system powered by
 
 ### 1- Movement
 
-- Motor: Our driving motor consists of a RC380 high speed carbon brushed DC motor with gearbox powers the rear axle which can run up to 15000 revolutions per minute. It is controlled via car.throttle (Ranged from -1 to 1) in the Navigation Module. Negative value means backwards while 0 means no movement. Besides, the motor is powerful and capable of powering four wheels to run at the same time. You can find our motor [here](https://www.aliexpress.com/i/1005003661229027.html).
-
+- Motor: Our driving motor consists of a [RC380 high speed carbon brushed DC motor](https://www.aliexpress.com/i/1005003661229027.html) with gearbox powers the rear axle which can run up to 15000 revolutions per minute. It is controlled via car.throttle (Ranged from -1 to 1) in the Navigation Module. Negative value means backwards while 0 means no movement. Besides, the motor is powerful and capable of powering four wheels to run at the same time.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fad5ef22-f7fe-4a69-8b6e-41da49685577" alt="Imagen 1" width="400">
 </p>
 
 The carbon brushes in the motor have good electrical conductivity. This provides reliable and constant power to the car every time when used.
 
-- Electronic speed controller (WP 1625 brushed): A brushed DC motor usually runs continuously as long as adequate voltage is applied to the vehicle. To control how fast the motor spins, the brushed ESC simply chops the voltage. When the motor’s speed exceeds the designated maximum speed set in the Navigation Module, it reduces the voltage being transferred to the motor and hence controls the speed of the car. Therefore, this can conserve enough energy to power the car. You can find our speed controller [here](https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53)
+- Electronic speed controller ([WP 1625 brushed](https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53)): A brushed DC motor usually runs continuously as long as adequate voltage is applied to the vehicle. To control how fast the motor spins, the brushed ESC simply chops the voltage. When the motor’s speed exceeds the designated maximum speed set in the Navigation Module, it reduces the voltage being transferred to the motor and hence controls the speed of the car. Therefore, this can conserve enough energy to power the car.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/08971778-bc06-44f3-b101-dcce93132fcf" alt="Imagen 1" width="400">
