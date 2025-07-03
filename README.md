@@ -151,7 +151,8 @@ The invalid depth band (blind spot) is very small
 </p>
 
 # Code and programming
-## Assignment
+
+## Importing Libraries
 ### Python Library: 
 ```ino
 import pyrealsense2 as rs
@@ -165,7 +166,7 @@ from realsense_depth_Copy1copy import DepthCamera
 1.	Pyrealsense: Used to send data and information of the objects sensed by the camera to the Jetson Nano
 2.	cv2: Allows the image captured by the camera to be transferred to data in the Python code.
 4.	NvidiaRacecar from realsense_depth_Copy1copy: It gives information, data and a determining standard for the realsense D435i camera to give essential information for the direction determination of the servo and the movement of the motor.
-
+## Assignment
 | Variables  | Function/description |
 | -------------- | -------------- |
 | speed  | The speed of the car |
