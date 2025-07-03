@@ -207,6 +207,16 @@ We had set several dots on the camera to sense the image colour depth (black) so
 The steering values will smoothly vary between -1 and 1 in accordance to distance deviations. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. Middle points centered at around x = 320,	Left points at around x = 100 and right points at around x = 560. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls.
 
 
+## Strategy for obstacle challenge
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ae2b33bf-fe64-4d98-919c-388a1b6e3bb3" alt="Imagen 1" width="300">
+</p>
+
+Our strategy for this task is to modify the sensor and the camera. We thought of adding a rectangular range in the camera to ensure that the vehicle changes direction within a reasonable range in accordance to the nearby red/green block. 
+
+
+
 
 ## References
 - https://www.intelrealsense.com/depth-camera-d435i/
