@@ -1,4 +1,6 @@
-Electromechanical diagrams
+Circuit diagram
 ====
 
-This directory must contain one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+here you can find the circuit that integrates our robot, as well as we can find a  simple but easy-to-understand explanation of it.
+<br>
+ <br>
