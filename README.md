@@ -215,6 +215,8 @@ The steering values will smoothly vary between -1 and 1 in accordance to distanc
 
 Most of the code of the basic camera setup and the connection between the components can be used in both tasks. Our strategy for this task is to modify the sensor and the camera. We thought of adding a rectangular range in the camera to ensure that the vehicle changes direction within a reasonable range in accordance with the nearby red/green block. 
 
+However, sometimes the camera senses two blocks at the same time. To deal with this issue, we added functions to the camera so that it can detect the distance between the two blocks when both of them are being detected. If the block is away from the orange & blue lines on the mat, which means the y-coordinate of the block in the sensor is higher than a designated value, the block would be ignored at this moment. This prevents the disturbance of multiple color blocks to the camera, causing the servo motor to malfunction and turn to the wrong side.
+
 ## Challenges we overcame
 
 - When encountering the obstacle challenge, one main issue we faced was that the RGB value of the red blocks is similar to that of the orange line on the mat. This causes the servo motor to react even if there is only the orange line but no red blocks in front of the robot. This often causes the car to turn to the right too early and hit the wall or obstacles. Therefore, we tried to tune the RGB value sensor of the camera. However, it didn't work at first. We then took a pixel from each of the lines and the red block, respectively, which is easier for the camera to sense and determine its color differences. We thought of an idea of auto-tuning the upper and lower limits of the RGB color range of the sensor in addition to the light source in the surrounding environment every time the vehicle is put in a different environment. The reduction or extension of the range of the RGB color reduces human error in tuning the RGB color difference between the red blocks and the orange line.
@@ -224,11 +226,11 @@ Most of the code of the basic camera setup and the connection between the compon
 </p>
 
 
-- Another problem we encountered in the obstacle challenge is that the camera range is too wide that it may sometimes sense color blocks from the other side or too far away from the vehicle. This affects the steering timing or direction of the car. For example, there's a red block near the car and the camera also senses a green block from a longer distance. The car may detect both blocks and result in an error, or it may turn in the wrong direction and the car would crash into the nearby block. To deal with this issue, we tried to add functions to the camera so that it can detect the distance between the two blocks when both of them are being detected. If the block is away from the boarder lines ( orange & blue line), which means the y-coordinate of the block in the sensor is higher than a designated value, the block would be ignored at this moment. This prevents the disturbance of multiple color blocks to the camera, causing the servo motor to malfunction and turn to the wrong side.
+- Another problem we encountered in the obstacle challenge is that the camera range is too wide that it may sometimes sense color blocks from the other side or too far away from the vehicle. This affects the steering timing or direction of the car. For example, there's a red block near the car and the camera also senses a green block from a longer distance. The car may detect both blocks and result in an error, or it may turn in the wrong direction and the car would crash into the nearby block. To deal with this issue, we tried to add functions to the camera so that it can detect the distance between the two blocks when both of them are being detected. If the block is away from the border lines ( orange & blue lines), which means the y-coordinate of the block in the sensor is higher than a designated value, the block would be ignored at this moment. This prevents the disturbance of multiple color blocks to the camera, causing the servo motor to malfunction and turn to the wrong side.
 
 ---
 
-- Besides, when installing the python library, we had also struggled and encountered some challenges. After failure and failure, we finally thought of a solution solving this issue.
+- Besides, when installing the python library, we had also struggled and encountered some challenges. After failure and failure, we finally thought of a solution to solve this issue.
 
 <br>
  <br>
