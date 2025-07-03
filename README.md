@@ -228,7 +228,7 @@ Our strategy for this task is to modify the sensor and the camera. We thought of
 
 
  > [!NOTE]
->For more details, click [here](https://github.com/CFSS-WRO/WRO2425/blob/main/schemes/README.md)
+>For more details, click [here](https://github.com/CFSS-WRO/WRO2425/blob/main/solution%20_for_installing_pyrealsense2.md)
 
 
 <br>
