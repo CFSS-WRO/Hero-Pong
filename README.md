@@ -165,18 +165,7 @@ from realsense_depth_Copy1copy import DepthCamera
 1.	Pyrealsense: Used to send data and information of the objects sensed by the camera to the Jetson Nano
 2.	cv2: Allows the image captured by the camera to be transferred to data in the Python code.
 4.	NvidiaRacecar from realsense_depth_Copy1copy: It gives information, data and a determining standard for the realsense D435i camera to give essential information for the direction determination of the servo and the movement of the motor.
-### Servo configuration:
 
-
-```ino
-if x >0-y*90:           #too right turing left
-            car.steering=-0.3*steering_value 
-        elif x <0*-y*90:        #too left turing right
-            car.steering=0.3*steering_value 
-        else:                  
-            car.steering = 0*steering_value         
-```       
-This initializes the servo and ensures that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered positive and counterclockwise means negative to the left direction.
 | Variables  | Function/description |
 | -------------- | -------------- |
 | speed  | The speed of the car |
@@ -192,6 +181,18 @@ This initializes the servo and ensures that the specific angles for left, right 
 last_left = None / last_right = None  last_mid = None / last_block = None| Since our depth camera sometimes cannot obtain the distance successfully, we will store the last value it got successfully and use that value if the distance cannot be obtained | dist_red, dist_green |  Distance of the red block and green block
  | checked_is_behind_line checked_is_behind_line2  | If these values are True, that means the block is behind the line, we can ignore it until the car pass through the blue or orange line|  
 
+### Servo configuration:
+
+
+```ino
+if x >0-y*90:           #too right turing left
+            car.steering=-0.3*steering_value 
+        elif x <0*-y*90:        #too left turing right
+            car.steering=0.3*steering_value 
+        else:                  
+            car.steering = 0*steering_value         
+```       
+This initializes the servo and ensures that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered positive and counterclockwise means negative to the left direction.
 
 
 ### Camera and sensors’ object detection and obstacle determination:
