@@ -1,7 +1,7 @@
 # Team Hero Pong
-This is the official repository of the Hero Pong Team for the 2025 WRO Futurn Engineers. In this repository you can find everything related to our robot.
+This is the official repository of the Hero Pong Team for the 2025 WRO Future Engineers. In this repository, you can find everything related to our robot.
 
-## Our repsitory
+## Our repository
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
@@ -28,12 +28,12 @@ He is passionate in robotics. His main role in the team is to design and provide
 ## Mak Ching Long:
 ### Age: 16
 
-He is the main programmer of the team. He's good at programming, especially in python. He's also good at communicating with others so he can explain the program to the team and teamates can work together more easily. His role in the team is the programming of the robot, as well as documenting the whole process of the robot.
+He is the main programmer of the team. He's good at programming, especially in python. He's also good at communicating with others so he can explain the program to the team and teammates can work together more easily. His role in the team is the programming of the robot, as well as documenting the whole process of the robot.
 
 ## Hui Chit Ming:
 ### Age: 15
 
-He is optimistic and often cheers up the team. He brings the team together and allow us to overcome challenges. His role in the team is to do some of the python programming and mainly documenting the repository of the robot.
+He is optimistic and often cheers up the team. He brings the team together and allows us to overcome challenges. His role in the team is to do some of the python programming and mainly document the repository of the robot.
 
 <br>
  <br>
@@ -109,7 +109,7 @@ The carbon brushes in the motor have good electrical conductivity. This provides
   <img src="https://github.com/user-attachments/assets/1217d6f5-a701-48f2-973d-56203400c31b" alt="Imagen 1" width="300">
 </p>
 
-- Steering method: We uses Ackerman steering as the method of steering. Unlike differential steering, this method requires one servo motor only, and it is attached to the front axle so that it offers a good balance of control, higher stability and effectiveness. Apart from that, we made the front and rear axle differentials so that the steering is more flexible. This also reduces tire skidding and ensures firm grip is maintained between the wheels and the mat. The diagram below shows the differences between Ackerman steering and differential steering vehicle:
+- Steering method: We use Ackerman steering as the method of steering. Unlike differential steering, this method requires one servo motor only, and it is attached to the front axle so that it offers a good balance of control, higher stability, and effectiveness. Apart from that, we made the front and rear axle differentials so that the steering is more flexible. This also reduces tire skidding and ensures a firm grip is maintained between the wheels and the mat. The diagram below shows the differences between Ackerman steering and differential steering vehicles:
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9fa1718e-56e3-4a8f-9472-a1f04b0856e1" alt="Imagen 1" width="250">
 </p>
@@ -134,7 +134,7 @@ We had thought of using typical popular widely used sensors at first. However, a
 
 
 
-- Stereo depth camera: It is capable of processing image depth at up to 90 frames per second, it updates the object depth positions every 11.1 milliseconds, making it the ideal camera for tracking objects when the car is moving in such high speed. The camera runs a global shutter sensor which provides great low‑light sensitivity allowing robots to navigate spaces with the lights off. Therefore, this can minimize the effect of the disturbance of light in the surrounding environment. Unlike typical ultrasonic sensors, it can detect objects from a farther distance, which enhances the effectiveness of object detection. On the other hand, there are less blind spots in our camera when compared to that of ultrasonic sensors. LiDAR sensors are also another widely used type of sensor used in robotics. However, it required much more energy to run and has less details in depth data compared to our stereo camera.
+- Stereo depth camera: It is capable of processing image depth at up to 90 frames per second, it updates the object depth positions every 11.1 milliseconds, making it the ideal camera for tracking objects when the car is moving at such high speed. The camera runs a global shutter sensor which provides great low‑light sensitivity allowing robots to navigate spaces with the lights off. Therefore, this can minimize the effect of the disturbance of light in the surrounding environment. Unlike typical ultrasonic sensors, it can detect objects from a farther distance, which enhances the effectiveness of object detection. On the other hand, there are fewer blind spots in our camera when compared to those of ultrasonic sensors. LiDAR sensors are also another widely used type of sensor used in robotics. However, it required much more energy to run and has less details in-depth data compared to our stereo camera.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0e1613c7-a394-453a-bc6e-d5edb2a98360" alt="Imagen 1" width="250">
   <img src="https://github.com/user-attachments/assets/16fb3ef4-1755-4df2-b9c5-3eb3c8674062" alt="Imagen 2" width="250">
