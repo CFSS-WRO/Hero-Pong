@@ -151,6 +151,37 @@ The invalid depth band (blind spot) is very small
 </p>
 
 ## Code and programming
+## Assignment
+### Python Library: 
+```ino
+#import pyrealsense2 as rs
+#import numpy as np
+#import cv2
+#import time
+#from jetracer.nvidia_racecar import NvidiaRacecar
+#from realsense_depth_Copy1copy import DepthCamera
+```
+ 
+1.	Pyrealsense: Used to send data and information of the objects sensed by the camera to the Jetson Nano
+2.	cv2: Allows the image captured by the camera to be transferred to data in the python code.
+3.	NvidiaRacecar from realsense_depth_Copy1copy: It gives information, data and a determining standard for the realsense D435i camera to give essential information for the direction determination of the servo and the movement of the motor.
+### Servo configuration:
+
+
+```ino
+if x >0-y*90:           #too right turing left
+            car.steering=-0.3*steering_value 
+        elif x <0*-y*90:        #too left turing right
+            car.steering=0.3*steering_value 
+        else:                  
+            car.steering = 0*steering_value         
+```       
+This initializes the servo and ensure that the specific angles for left, right turns. The car steering value ranges from -1 to 1, using the gyroscope, clockwise which means moving to the right is considered as positive and counterclockwise means negative to the left derection.
+
+### Camera and sensors’ object detection and wall determination:
+We had set several dots on the camera to sense the image color depth (black) so that when the car drives near a turning corner, the camera will give signals to the Jetson Nano motherboard and it allows the servo to work in accordance to the situation. The gyroscope also plays a big role in this task. Whenever the car is too farther away from the horizontal forward track, the car will adjust itself to the opposite direction to keep the car moving forward and not hitting the walls. We added 5 dots for each left, centre and the right sector of the camera. Our program calculates the average black color depth of each sector separately. It will then compare the 3 values to determine if the vehicle is moving at the wrong direction or to an unfavourable direction. We will exclude the extreme values and 0, which is ‘junk data’ in this situation so that the average is not affected by other extreme polar values. By this method, this reduces the risk of the disturbance of lights in the surrounding environment from affecting the determination of black walls.	
+### Monitoring of sensors: 
+We added data and information to the monitor connected to the car for better vision and for easier understanding of what the program is at so that it is easy to know where did the car error during our process of coding. We came up an idea of adding more dots on the screen for better and more accurate determination of the distance of the nearest wall from the car.  
 
 
 
