@@ -11,8 +11,27 @@
 ## Team members
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/17807b2c-e8e5-45d5-86e3-0f7c1fa7c916" alt="Imagen 1" width="500">
+  <img src="https://github.com/user-attachments/assets/a95a1965-0a07-4717-9a6f-adaeed88100f" alt="Imagen 1" width="500">
 </p>
+
+## Mak Ching Long:
+### Age: 16 
+
+
+
+
+
+
+<br>
+ <br>
+
+
+ > [!NOTE]
+> To see the funny photo [here](https://github.com/kieviceb/TERRENATOR-WRO-2024/tree/main/t-photos)
+
+
+<br>
+
 
 ## Components
 
@@ -59,7 +78,7 @@ This circuit diagram represents the connections of the robotic system powered by
 - Motor: Our driving motor consists of a RC380 high speed carbon brushed DC motor with gearbox powers the rear axle which can run up to 15000 revolutions per minute. It is controlled via car.throttle (Ranged from -1 to 1) in the Navigation Module. Negative value means backwards while 0 means no movement. Besides, the motor is powerful and capable of powering four wheels to run at the same time. You can find our motor [here](https://www.aliexpress.com/i/1005003661229027.html).
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e80d7489-e372-4cba-b2b0-9415e855fad2" alt="Imagen 1" width="400">
+  <img src="https://github.com/user-attachments/assets/fad5ef22-f7fe-4a69-8b6e-41da49685577" alt="Imagen 1" width="400">
 </p>
 
 The carbon brushes in the motor have good electrical conductivity. This provides reliable and constant power to the car every time when used.
@@ -67,7 +86,7 @@ The carbon brushes in the motor have good electrical conductivity. This provides
 - Electronic speed controller (WP 1625 brushed): A brushed DC motor usually runs continuously as long as adequate voltage is applied to the vehicle. To control how fast the motor spins, the brushed ESC simply chops the voltage. When the motor’s speed exceeds the designated maximum speed set in the Navigation Module, it reduces the voltage being transferred to the motor and hence controls the speed of the car. Therefore, this can conserve enough energy to power the car. You can find our speed controller [here](https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/02ab2f04-5734-4293-9f4a-ceb8e19f84f7" alt="Imagen 1" width="400">
+  <img src="https://github.com/user-attachments/assets/08971778-bc06-44f3-b101-dcce93132fcf" alt="Imagen 1" width="400">
 </p>
 
 ### 2- Steering
@@ -91,13 +110,39 @@ The carbon brushes in the motor have good electrical conductivity. This provides
 -	Onboard battery voltage monitor: FP5139 automatic buck-boost voltage regulator circuit delivers stable 5V voltage to Jetson Nano. 
 -	Onboard AINA219 acquisition chip: Real-time monitoring of battery voltage and charging current.
 
+### 2- Camera and sensors
+We had thought of using typical popular widely used sensors at first. However, at last we used Intel RealSense D435i depth camera as the main sensor for our vehicle due to its high versatility and resolution. It consists of multiply ways of detecting objects. Therefore, it’s a new challenge that we may face while trying out this complex camera. The main reason we chose this camera is the fact that it has IMU installed. Most of the widely used cameras do not include gyroscope or accelerometer. Compared to other camera or sensors, this camera is versatile and multi-functioned. It is capable to carry out different measurements at the same time, which is more cost-effective. Besides, its wide field of view allows it to cover more area and less blind spots. Therefore, we ended up using RealSense D435i as the main sensor of the car.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/483be46d-bef5-4593-a3ba-b03cc1d4b545" alt="Imagen 1" width="400">
+</p>
 
 
 
-## How to prepare the repo based on the template
 
-_Remove this section before the first commit to the repository_
+- Stereo depth camera: It is capable of processing image depth at up to 90 frames per second, it updates the object depth positions every 11.1 milliseconds, making it the ideal camera for tracking objects when the car is moving in such high speed. The camera runs a global shutter sensor which provides great low‑light sensitivity allowing robots to navigate spaces with the lights off. Therefore, this can minimize the effect of the disturbance of light in the surrounding environment. Unlike typical ultrasonic sensors, it can detect objects from a farther distance, which enhances the effectiveness of object detection. On the other hand, there are less blind spots in our camera when compared to that of ultrasonic sensors. LiDAR sensors are also another widely used type of sensor used in robotics. However, it required much more energy to run and has less details in depth data compared to our stereo camera.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0e1613c7-a394-453a-bc6e-d5edb2a98360" alt="Imagen 1" width="250">
+  <img src="https://github.com/user-attachments/assets/16fb3ef4-1755-4df2-b9c5-3eb3c8674062" alt="Imagen 2" width="250">
+</p>
+The invalid depth band (blind spot) is very small
 
-1. Clone this repo by using the `git clone` functionality.
-2. Remove `.git` directory
-3. [Initialize a new public repository on GitHub](https://github.com/new) by following instructions from "create a new repository on the command line" section (appeared after pressing "Create repository" button).
+- RGB colour sensor: The sensor detects the colour of objects with the technology of rolling shutter. Although rolling shutter is usually used for capturing still images, it’s more energy-efficient compared to global shutter sensor and it’s capable enough to sense the colour of blocks and colour lines in both tasks. The sensor’s high RGB frame and sensor resolution also plays a major role in enhancing the efficient detection of colours. Another reason we used this camera is because the RGB colour sensor has a slightly smaller angle of view than the depth camera. Compared to other widely used sensors such as raspberry pi sc1174  stereo camera, its field of view is smaller which actually benefits the sensing of objects in the tasks. As a result, different colours in the surroundings would not affect the detection of the RGB camera which enables accurate determination of different colour for the tasks.
+- Gyroscope: The IMU installed in the camera allows it to refine its depth awareness in any situation even when the camera moves and allows point-cloud alignment. The IMU combines multiple sensors with gyroscopes to sense angular orientation and angular velocity. It detects both rotation and movement of the camera in 3 axes, pitch, yaw and roll using a three-dimensional coordinate system. Axes ACC-X, ACC-Y, ACC-Z. The ACC-X axis points to the right, ACC-X points up and ACC-X points vertically upwards from the top surface of the sensor. Clockwise rotation around the (Ω_X ) ⃗   (roll), (Ω_Y ) ⃗   (pitch) or (Ω_Z ) ⃗   (yaw) axes is considered as positive, which means counterclockwise rotation is considered as negative. These measurements allow the camera to detect direction of rotation and rotation angles so that it can measure the distance of the blocks and walls at different angles in both tasks. We also tried to make use of the image direction stabilization function to send information to the servo to change the direction of the wheels in accordance to the nearby blocks and walls. For our vehicle, Only (Ω_Z ) ⃗ is essential for the direction determination. We set value 0 as horizontal forward of the car. The sector at the right is set as positive while the left side is considered as negative. Whenever the value is biased to one side (positive/negative), we programmed the servo to run with values of the another side until the value is resulted in 0, which is horizontally forward. When the vehicle moves near the corners of the field, the camera only senses a wall in the front  at a close distance and it will sense the gyroscope to give a changed (Ω_Z ) ⃗ value and therefore it can enable the servo to turn and change the direction of the vehicle.
+
+- Accelerometer: The IMU installed in the camera also combines with an accelerometer which is essential for our robot. It senses linear axis orientation and acceleration.  It determines whether the camera is going faster or slower and therefore it can provide instruction to the camera to adjust its image capture rate and for anti-blur capturing. This ensures that stable and still images at every frame can be captured clearly. Apart from that, it serves another important purpose in dealing with the fluctuation problem of electricity and power supply to the servo and motor. At first, our vehicle faces the problem of insufficient supply of power to the car. We tried to minimize the weight and utilize batteries with larger capacity. However, the problem wasn’t solved until we tried to tune the accelerometer. We found out that it can measure the change in velocity (acceleration) of an object over time. Therefore, we can make use of the accelerometer to send signals to control the speed of the car. Since the power supply to the car changes whenever it starts moving and fluctuates from time to time when running, the power supply management is very important to ensure that the vehicle can run flawlessly. Therefore, whenever the speed of the car exceeds the designated maximum car speed, we programmed the vehicle to give signal to the Electronic Speed Controller and adjust the speed of the servo and motor. Hence, this ensures that adequate power is conserved for the car to power all the components of the car throughout the whole tasks.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e23e0a92-adfc-4575-8f2b-2450a388ddff" alt="Imagen 1" width="400">
+</p>
+
+## Code and programming
+
+
+
+
+
+
+
+
+
