@@ -11,11 +11,10 @@
 ## Team members
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a95a1965-0a07-4717-9a6f-adaeed88100f" alt="Imagen 1" width="500">
+  <img src="https://github.com/user-attachments/assets/fcefb505-23ac-45bf-87e4-8f6c74e1387d" alt="Imagen 1" width="500">
 </p>
 
-## Mak Ching Long:
-### Age: 16 
+
 
 
 
