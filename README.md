@@ -75,7 +75,7 @@ This circuit diagram represents the connections of the robotic system powered by
 
 
  > [!NOTE]
->For more details go to the schemes README by clicking [here](https://github.com/CFSS-WRO/WRO2425/blob/main/schemes/README.md)
+>For more details, go to the schemes README by clicking [here](https://github.com/CFSS-WRO/WRO2425/blob/main/schemes/README.md)
 
 
 <br>
@@ -214,6 +214,29 @@ The steering values will smoothly vary between -1 and 1 in accordance to distanc
 </p>
 
 Our strategy for this task is to modify the sensor and the camera. We thought of adding a rectangular range in the camera to ensure that the vehicle changes direction within a reasonable range in accordance with the nearby red/green block. 
+
+## Challenges we overcame
+
+
+
+
+
+
+
+<br>
+ <br>
+
+
+ > [!NOTE]
+>For more details, click [here](https://github.com/CFSS-WRO/WRO2425/blob/main/schemes/README.md)
+
+
+<br>
+
+
+---
+
+
 
 
 
