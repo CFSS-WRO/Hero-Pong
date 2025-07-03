@@ -220,9 +220,6 @@ Our strategy for this task is to modify the sensor and the camera. We thought of
 
 
 
-
-
-
 <br>
  <br>
 
