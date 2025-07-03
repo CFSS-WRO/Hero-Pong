@@ -154,12 +154,12 @@ The invalid depth band (blind spot) is very small
 ## Assignment
 ### Python Library: 
 ```ino
-#import pyrealsense2 as rs
-#import numpy as np
-#import cv2
-#import time
-#from jetracer.nvidia_racecar import NvidiaRacecar
-#from realsense_depth_Copy1copy import DepthCamera
+import pyrealsense2 as rs
+import numpy as np
+import cv2
+import time
+from jetracer.nvidia_racecar import NvidiaRacecar
+from realsense_depth_Copy1copy import DepthCamera
 ```
  
 1.	Pyrealsense: Used to send data and information of the objects sensed by the camera to the Jetson Nano
