@@ -181,14 +181,15 @@ This initializes the servo and ensure that the specific angles for left, right t
 | ------------- | ------------- |
 | speed  | The speed of the car |
 | front_dist  | The range of dangerous distance|
-| steering_value  | Due to the reason that we have 2 different kinds of model of servo. For model a, the right direction of the steering value is –1 while for model b, the right direction value is 1.  In order to make this code can change different model easier, we add this varible, by change the value in this valrible be 1 or –1, the steering direction can be corrected easily |
-| loop  | It stands for whether if statement the car are currecting working on, so that we can fix the bug more easily  |
-| Content Cell  | Content Cell  |
-| First Header  | Second Header |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| steering_value  | Due to the reason that we have 2 different kinds of models of servo. For model A, the right direction of the steering value is –1, while for model B, the right direction value is 1.  In order to make this code change to different models more easily, we add this variable. By changing the value in this variable be 1 or –1, the steering direction can be corrected easily |
+| loop  | It stands for whether the "if statement" the car is currently working on, so that we can fix the bug more easily  |
+| mixed loop  | The same as “loop”, it stands for which "if statement" it is, but only for identifying the red blocks and green blocks  |
+| flag_block | When it is True, it means that a block was captured by the camera |
+| flag_block_based_on  | To check which "if statement" has run the code and made the value of flag_block change, for easier debugging| red_logic  | When it is True, it will run the part for the red block obstacle avoidance | green_logic  |   When it is True, it will run the part for the green block obstacle avoidance | got_direction  | To check is the car know the direction of car travel, when got direction is True, it will detecting line ( orange and blue) if it is False, it will stop decting line
+  | right_direction  | It stands for the direction of the car travel, True stands for right, False stands for left
+  | Content Cell  | Content Cell  |
 
-
+The same as “loop”, it stands for which "if statement" it is, but only for identifying the red blocks and green blocks
 
 
 ### Camera and sensors’ object detection and wall determination:
