@@ -215,6 +215,7 @@ The steering values will smoothly vary between -1 and 1 in accordance to distanc
 - https://developer.download.nvidia.com/assets/embedded/secure/jetson/Nano/docs/NV_Jetson_Nano_Developer_Kit_User_Guide.pdf?__token__=exp=1751552084~hmac=e63bf29d233df0d843b6c97e4486a0eed943069fe968967cf5e0ea8cd218808c&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9
 - https://youtu.be/F3G0sUz3_Jw?si=XnzUtsvSodAnV4Uu
 - https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf
+- https://www.cnblogs.com/gooutlook/p/15540298.html
 
 
 
