@@ -215,6 +215,44 @@ The steering values will smoothly vary between -1 and 1 in accordance to distanc
 
 Most of the code of the basic camera setup and the connection between the components can be used in both tasks. Our strategy for this task is to modify the sensor and the camera. We thought of adding a rectangular range in the camera to ensure that the vehicle changes direction within a reasonable range in accordance with the nearby red/green block. 
 
+```ino
+def detect_block_position_for_action(dist_red, red_mid_y, blue_mid_y, orange_mid_y, blue_depth, orange_depth,bottom):
+    global flag_block
+    if dist_red >= 999999999999999999999999999999 or red_mid_y is None: #"No red block detected", "No red block detected"
+        flag_block_based_on = 1
+        flag_block = False
+        
+        
+    blue_position = "Unknown"
+    orange_position = "Unknown"
+    
+    behind_blue = False
+    behind_orange = False
+    print("bottom and orange_mid_y are: ",bottom,blue_mid_y,orange_mid_y)
+    # Compare with blue line
+    if blue_mid_y is not None:
+    # Allow some vertical tolerance (e.g., 50 pixels) to consider the block aligned with the line
+        if bottom <  blue_mid_y:
+            blue_position = "Behind blue line"
+            behind_blue =  True
+    # Compare with orange line
+    if orange_mid_y is not None:
+        if bottom < orange_mid_y:
+
+            orange_position = "Behind orange line"
+            behind_orange = True
+    if behind_blue == True or behind_orange== True: #the block is behind the line:
+        return True
+    else:
+        return False
+i = 0
+
+while True:
+    
+    i = i+1
+    if i == 4:
+        car.throttle = speed
+```
 However, sometimes the camera senses two blocks at the same time. To deal with this issue, we added functions to the camera so that it can detect the distance between the two blocks when both of them are being detected. If the block is away from the orange & blue lines on the mat, which means the y-coordinate of the block in the sensor is higher than a designated value, the block would be ignored at this moment. This prevents the disturbance of multiple color blocks to the camera, causing the servo motor to malfunction and turn to the wrong side.
 
 ## Challenges we overcame
