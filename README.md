@@ -1,3 +1,6 @@
+# Team Hero Pong
+This is the official repository of the Hero Pong Team for the 2025 WRO Futurn Engineers. In this repository you can find everything related to our robot.
+
 ## Our repsitory
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
