@@ -40,7 +40,7 @@ He is optimistic and often cheers up the team. He brings the team together and a
 
 
  > [!NOTE]
-> To see the funny photo [here](https://github.com/kieviceb/TERRENATOR-WRO-2024/tree/main/t-photos)
+> To see the funny photo, click [here](https://github.com/kieviceb/TERRENATOR-WRO-2024/tree/main/t-photos)
 
 
 <br>
