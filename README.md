@@ -213,7 +213,7 @@ The steering values will smoothly vary between -1 and 1 in accordance to distanc
   <img src="https://github.com/user-attachments/assets/ae2b33bf-fe64-4d98-919c-388a1b6e3bb3" alt="Imagen 1" width="300">
 </p>
 
-Our strategy for this task is to modify the sensor and the camera. We thought of adding a rectangular range in the camera to ensure that the vehicle changes direction within a reasonable range in accordance to the nearby red/green block. 
+Our strategy for this task is to modify the sensor and the camera. We thought of adding a rectangular range in the camera to ensure that the vehicle changes direction within a reasonable range in accordance with the nearby red/green block. 
 
 
 
