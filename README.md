@@ -1,9 +1,9 @@
-Engineering materials
+![image](https://github.com/user-attachments/assets/4ee3069b-20ed-4fbe-8884-93ec836f2b6f)Engineering materials
 ====
 
 This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
 
-## Content
+## Our repsitory
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
@@ -12,10 +12,86 @@ This repository contains engineering materials of a self-driven vehicle's model 
 * `src` contains code of control software for all components which were programmed to participate in the competition
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
+  
+## Components
+
+
+| <img src="https://github.com/user-attachments/assets/641dbab1-b12c-40ba-bcb9-73b2401fa7ed" alt="Alt 1" width="200"/> | <img src="https://github.com/user-attachments/assets/0c14f0a2-f720-42db-9fbb-cf9034cb6cf6" alt="Alt 1" width="200"/> | <img src="https://github.com/user-attachments/assets/f03dd1c9-fa48-42ad-b609-4f839e0a1de0" alt="Alt 1" width="200"/> | 
+| :------------: |:-------------:| :------------:|
+|[Jetson Nano B01 x1](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)|JetRacer Pro expansion board x1|cooling fan x1|
+| <img src="https://github.com/user-attachments/assets/308fefe0-61c9-4e8f-8fdd-20f77f33addc" width="200"/> | <img src="https://github.com/user-attachments/assets/e10e6040-a7e2-48da-b08b-5fb837d980a7" alt="Alt 1" width="200"/> | <img src="https://github.com/user-attachments/assets/f05c69cc-1995-411a-ae74-88c3eef60139" alt="Alt 1" width="200"/> |
+| [WP 1625 brushed electronic speed controller x1](https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53) |[RC380 high speed carbon brushed DC motor x1](https://www.aliexpress.com/i/1005003661229027.html)|[e6001 servo motor](https://www.amazon.com/-/zh_TW/dp/B06XF7MFPJ) |
+| <img src="https://github.com/user-attachments/assets/bb4f38f3-5291-4a82-b1b4-f688ee4dfd86" width="200"/> |<img src="https://github.com/user-attachments/assets/bdb73d1a-eae1-4b31-9f0b-a59c50f8e206" alt="Alt 1" width="200"/>| <img src="https://github.com/user-attachments/assets/c0dde0e4-c927-452a-8d0b-1cc9c07cd210" alt="Alt 1" width="200"/> |
+|[Realsense D435i camera x1](https://www.intelrealsense.com/depth-camera-d435i/)|[Wireless-AC8265 x1](https://www.amazon.com/-/zh_TW/Intel-Wireless-Ac-8265-%E9%99%84%E8%97%8D%E7%89%99-8265-NGWMG/dp/B01MZA1AB2)|[8.4V 18650 battery ×4](https://www.steameshop.com/product/18650/?srsltid=AfmBOoq64uuFMYHSZRhLKaVYFERjOLc22R510Y9Ci-HTcJxwL2meLc1y6ps)|
+| <img src="https://github.com/user-attachments/assets/0e900534-9620-4852-a608-f126c70fc098" width="200"/> |
+|[Single key button x1](https://www.amazon.co.uk/Programmable-User-Defined-Button-Customized-Combination/dp/B08SQGWZN4?th=1) |
 
 ## Introduction
 
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
+After deep investigation and consideration, we decided to search for suitable components and build them by ourselves. We used metal as the main material for most of the components since they do not break so easily and can fully simulate actual vehicles. We tried to make the robot lighter and more efficient and minimize its size. We stumbled upon different model shapes and ended up with an idea of the shape of a race car with lightweight construction and aerodynamic design to create the most efficient autonomous vehicle. Besides, we decided to use Nvidia Jetson Nano as the motherboard due to its ability to carry out complex calculations and parallel processing quickly. It’s also versatile and portable enough to control the vehicle.
+
+## Circuit Diagram
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/17807b2c-e8e5-45d5-86e3-0f7c1fa7c916" alt="Imagen 1" width="500">
+</p>
+
+This circuit diagram represents the connections of the robotic system powered by four 18650 batteries and is controlled and processed by an Jetson Nano B01 motherboard. It consists only one camera for obstacle detection and direction determination, a servo motor for steering, and a DC motor for torque and speed using a on-board motor driver. The camera also consists of multiply kinds of sensors such s RGB sensor, gyroscope and accelerometer. The Jetson Nano B01 board is connected to the JetRacer Pro expansion board, which is the motor control board. It provides and regulates power transferred to other components.
+<br>
+ <br>
+
+
+ > [!NOTE]
+>For more details go to the schemes README by clicking [here](bruh)
+
+
+<br>
+
+
+---
+
+
+### Mobility management
+
+### 1- Movement
+
+- Motor: Our driving motor consists of a RC380 high speed carbon brushed DC motor with gearbox powers the rear axle which can run up to 15000 revolutions per minute. It is controlled via car.throttle (Ranged from -1 to 1) in the Navigation Module. Negative value means backwards while 0 means no movement. Besides, the motor is powerful and capable of powering four wheels to run at the same time. You can find our motor [here](https://www.aliexpress.com/i/1005003661229027.html).
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e80d7489-e372-4cba-b2b0-9415e855fad2" alt="Imagen 1" width="400">
+</p>
+
+The carbon brushes in the motor have good electrical conductivity. This provides reliable and constant power to the car every time when used.
+
+- Electronic speed controller (WP 1625 brushed): A brushed DC motor usually runs continuously as long as adequate voltage is applied to the vehicle. To control how fast the motor spins, the brushed ESC simply chops the voltage. When the motor’s speed exceeds the designated maximum speed set in the Navigation Module, it reduces the voltage being transferred to the motor and hence controls the speed of the car. Therefore, this can conserve enough energy to power the car. You can find our speed controller [here](https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/02ab2f04-5734-4293-9f4a-ceb8e19f84f7" alt="Imagen 1" width="400">
+</p>
+
+### 2- Steering
+ 
+- Steering system: The steering system is controlled by a servo motor. We chose to use e6001 servo which is a metal gear. It can withstand and output high power (6kg/cm torque) while maintaining its reasonably small size, weight and high portability. It controls the front axle using Ackerman steering geometry, controlled via car.steering (Ranged from -1 to 1) in the Navigation Module.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1217d6f5-a701-48f2-973d-56203400c31b" alt="Imagen 1" width="300">
+</p>
+
+- Steering method: We uses Ackerman steering as the method of steering. Unlike differential steering, this method requires one servo motor only, and it is attached to the front axle so that it offers a good balance of control, higher stability and effectiveness. Apart from that, we made the front and rear axle differentials so that the steering is more flexible. This also reduces tire skidding and ensures firm grip is maintained between the wheels and the mat. The diagram below shows the differences between Ackerman steering and differential steering vehicle:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9fa1718e-56e3-4a8f-9472-a1f04b0856e1" alt="Imagen 1" width="250">
+</p>
+
+### Caemra and sensor management
+
+### 1- Power system
+- Battery: Four [18650 batteries](https://www.steameshop.com/product/18650/?srsltid=AfmBOoq64uuFMYHSZRhLKaVYFERjOLc22R510Y9Ci-HTcJxwL2meLc1y6ps) (10400mAh, two in parallel, two in series) provide ~77 Wh to all sensors and the Nvidia Jetson Nano mother board which can support 3-minute rounds. The batteries we use have large capacity and no memory effect which allows maximized power for controlling the system. 
+-	Onboard protection circuit: HY2120+AOD514 lithium battery protection circuit which can prevent overcharge, over-discharge, overcurrent, and short circuits.
+-	Onboard battery voltage monitor: FP5139 automatic buck-boost voltage regulator circuit delivers stable 5V voltage to Jetson Nano. 
+-	Onboard AINA219 acquisition chip: Real-time monitoring of battery voltage and charging current.
+
+
+
 
 ## How to prepare the repo based on the template
 
