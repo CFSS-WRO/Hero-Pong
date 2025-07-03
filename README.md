@@ -224,6 +224,8 @@ When encountering the obstacle challenge, one main issue we faced was that the R
 </p>
 
 
+Another problem we encountered in the obstacle challenge is that the camera range is too wide that it may sometimes sense color blocks from the other side or too far away from the vehicle. This affects the steering timing or direction of the car. For example, there's a red block near the car and the camera also senses a green block from a longer distance. The car may detect both blocks and result in an error, or it may turn in the wrong direction and the car would crash into the nearby block. To deal with this issue, we tried to add functions to the camera so that it can detect the distance between the two blocks when both of them are being detected. If the block is away from the boarder lines ( orange & blue line), which means the y-coordinate of the block in the sensor is higher than a designated value, the block would be ignored at this moment. This prevents the disturbance of multiple color blocks to the camera, causing the servo motor to malfunction and turn to the wrong side.
+
 
 
 <br>
